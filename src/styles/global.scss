@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import './variables.scss';
+
+html {
+    font-family: 'Playfair Display Variable', serif;
+    font-family: 'Urbanist Variable', sans-serif;
+    background: $color-cream;
+}

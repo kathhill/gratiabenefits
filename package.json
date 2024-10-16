@@ -1,0 +1,20 @@
+{
+  "name": "gratiabenefits",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@fontsource-variable/playfair-display": "^5.1.0",
+    "@fontsource-variable/urbanist": "^5.1.0",
+    "astro": "^4.16.5",
+    "sass": "^1.79.5",
+    "typescript": "^5.6.3"
+  }
+}

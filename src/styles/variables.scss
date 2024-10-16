@@ -1,0 +1,14 @@
+$color-cream: #fff9f4;
+$color-sand0: #f6e8cb;
+$color-sand1: #d2bca8;
+$color-sand2: #b29478;
+$color-sand3: #917255;
+$color-sand4: #6e4f33;
+$color-sand5: #5c3a1b;
+$color-black: #000;
+
+$text: $color-black;
+
+$gradientLR: linear-gradient(to right,$color-sand0, $color-sand2);
+$gradientRL: linear-gradient(to right, $color-sand2, $color-sand0);
+$gradientTB: linear-gradient($color-sand0, $color-cream);
