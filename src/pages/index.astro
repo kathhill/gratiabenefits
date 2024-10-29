@@ -7,6 +7,12 @@ import flourish from "../images/flourish.svg";
 import logoIcon from "../images/logo-icon-black-255.png";
 import Contact from "../components/Contact.astro";
 import { Icon } from "astro-icon/components";
+import health from "../images/health2.jpg";
+import dentalVision from "../images/dental-vision2.jpg";
+import medicare from "../images/medicare2.jpg";
+import group from "../images/group2.jpg";
+import life from "../images/life2.jpg";
+import longTermCare from "../images/long-term-care2.jpg";
 ---
 
 <Layout
@@ -70,7 +76,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="health"
 				heading="Health Insurance"
-				src="/src/images/health2.jpg"
+				src={health.src}
 				body="Health risks are a part of life, and no one plans on getting sick, but it happens. Good health insurance ensures you get the care you need while protecting you from overwhelming medical bills. Secure your health plan today—contact Gratia Insurance Solutions for a quote."
 				btnCta="#contact"
 				btnText="Learn More"
@@ -78,7 +84,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="dental-vision"
 				heading="Dental & Vision Insurance"
-				src="/src/images/dental-vision2.jpg"
+				src={dentalVision.src}
 				body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu finibus turpis. In tristique luctus ex, nec bibendum eros dictum sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras semper nisl sed magna aliquet bibendum. Nam aliquet facilisis orci, non commodo sapien semper eget. Vivamus sit amet dignissim nunc. Fusce ultricies non sem vel feugiat."
 				btnCta="https://myplan.ameritas.com/id/010K7056"
 				btnText="Learn More"
@@ -87,7 +93,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="medicare"
 				heading="Medicare*"
-				src="/src/images/medicare2.jpg"
+				src={medicare.src}
 				body="Medicare options can be confusing, with multiple parts, enrollment periods, and rules that can feel overwhelming. As your Medicare Specialist, I'll handle the complexities for you, ensuring you receive quality care and maximize your Medicare benefits and prescription coverage. I'll also help you avoid costly late enrollment penalties, saving you money. Contact me today for a free Medicare consultation."
 				btnCta="#contact"
 				btnText="Learn More"
@@ -96,7 +102,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="group"
 				heading="Group Benefits"
-				src="/src/images/group2.jpg"
+				src={group.src}
 				body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu finibus turpis. In tristique luctus ex, nec bibendum eros dictum sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras semper nisl sed magna aliquet bibendum. Nam aliquet facilisis orci, non commodo sapien semper eget. Vivamus sit amet dignissim nunc. Fusce ultricies non sem vel feugiat."
 				btnCta="#contact"
 				btnText="Learn More"
@@ -104,7 +110,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="life"
 				heading="Life Insurance"
-				src="/src/images/life2.jpg"
+				src={life.src}
 				body="Nothing can replace the loss of a loved one, but planning ahead can ease the burden for those who depend on you. Life insurance can cover mortgage payments, funeral costs, car payments, groceries, and even your child's college tuition. With proper planning, you can provide peace of mind for your loved ones."
 				btnCta="#contact"
 				btnText="Learn More"
@@ -112,7 +118,7 @@ import { Icon } from "astro-icon/components";
 			<Card
 				id="long-term"
 				heading="Long Term Care"
-				src="/src/images/long-term-care2.jpg"
+				src={longTermCare.src}
 				body="Many people wait too long to secure long-term care insurance, unaware that approval is only possible while they are in good health. It’s crucial to plan early, while you are younger and healthy. Long-term care insurance provides peace of mind, protects the savings you’ve worked hard to build, and prevents your loved ones from bearing the burden of your care. Secure your dignity and choose your care environment with a long-term care policy."
 				btnCta="#contact"
 				btnText="Learn More"

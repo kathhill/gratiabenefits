@@ -1,4 +1,6 @@
 ---
+import logo from "../images/logo-final.svg";
+
 interface Props {
 	width: string;
 	height: string;
@@ -12,6 +14,6 @@ const { width, height, class: className } = Astro.props;
 	width={width}
 	height={height}
 	class={className}
-	src="/src/images/logo-final.svg"
+	src={logo.src}
 	alt="Gratia Insurance Solutions"
 />
