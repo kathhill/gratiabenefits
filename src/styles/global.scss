@@ -3,7 +3,434 @@
 @import './variables.scss';
 
 html {
-    font-family: 'Playfair Display Variable', serif;
-    font-family: 'Urbanist Variable', sans-serif;
-    background: $color-cream;
+    background: $color-cream;   
+    font-size: 18px;
+    line-height: 1.5; 
+    * {
+		box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+	}
+    .skip-link {
+        color: $color-cream;
+        font-weight: bold;
+    }
+    .sr-only {
+		clip: rect(0,0,0,0);
+		border-width: 0;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px
+	}
+	.focus\:not-sr-only:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		padding: 0;
+		position: static;
+		white-space: normal;
+		width: auto
+	}
 }
+
+body {
+		min-height: 100vh;
+        color: $color-black;
+	}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $text-heading;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;    
+}
+
+h3,
+.h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;   
+}
+
+h4,
+.h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    @media (min-width: 768px) {
+        font-size: 1.25rem;
+    }
+}
+
+p, a, ul, label, legend {
+    font-family: $text-copy;
+    font-size: 1rem;
+    color: $color-black;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+}
+
+a:not(.logo, .icon, .btn)::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $color-black;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    
+}
+
+a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+dt {
+    font-size: 1.5rem;
+
+    svg {
+        position: relative;
+        top: 4px;
+    }
+}
+
+dd {
+    font-size: 1.2rem;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: 576px) {
+        width: 540px;
+    }
+
+    @media (min-width: 768px) {
+        width: 720px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        width: 1320px;
+    }
+}
+
+.btn {
+    background: $color-sand5;
+    border-radius: 10px;
+    color: $color-cream;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .5rem 2rem;
+    width: 186px;
+}
+
+.icon svg {
+    height: 1.5rem;
+    position: relative;
+    width: 1.5rem;
+    top: .5rem;
+}
+
+span {
+    @media (max-width: 1023px) {
+        &.desktop {
+            display: none;
+        }
+    }
+    @media (min-width: 1024px) {
+        &.mobile {
+            display: none;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1023.9px) {
+    .navbar {
+        background: $color-cream;
+        border-top: 4px solid $color-sand4;
+        border-bottom: 4px solid $color-sand4;
+        height: 4rem;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        > span {
+            position: relative;
+            right: .5rem;
+            top: .5rem;
+            a {
+                font-size: 42px;
+            }
+        }
+    }
+    #menu-toggle {
+        opacity: 0;
+        &:checked {
+            ~ {
+                .menu-btn {
+                    >span {
+                        .open {
+                            display:none;
+                        }
+                        .close {
+                            display: block;
+                        }                        
+                    }
+                }
+                .menu-wrapper {
+                    visibility: visible;
+                    left: 0;
+                    margin-top: 4rem;
+                }
+            }
+        }
+    }
+    .menu-btn {
+        background: $color-cream;
+        display: flex;
+        font-size: 42px;
+        align-items: center;
+        position: fixed;
+        top: 30px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index:12;    
+        .x-wrapper {
+            height: 56px;
+        }
+        .close {
+            display: none;
+        }   
+    }
+    .logo {
+        img {
+            width: 98px;
+            height: auto;
+
+            @media (min-width: 768px) {
+                width: 128px;
+            }
+            @media (min-width: 1024px) {
+                width: 300px;
+            }
+        }
+    }
+    .menu-wrapper {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 30px 0;
+        list-style: none;
+        background-color: $color-sand5      ;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+        transition-duration: .25s;
+        z-index: 10;
+
+        .primary {
+            color: $color-cream;
+            padding-left: 2rem;
+
+            li {
+                margin-bottom: .5rem;
+                 a {
+                    color: $color-cream;
+                }
+            }           
+        }
+        .secondary {
+            display: none;
+        }
+
+        .large-screen {
+            display: none;
+        }
+
+        
+    }
+    .menu-item {
+        display: block;
+        padding: 12px 24px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        &.icon {
+            display: none;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+			border-top: $border4;
+            border-bottom: $border4;
+			width: 100%;
+			background: $color-cream;
+			color: $color-black;
+
+            .small-screen {
+                display: none;
+            }
+
+            .menu-btn,
+            #menu-toggle {
+                display: none;
+            }
+
+            .menu-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .large-screen {
+                    display: block;
+                    order: 2;
+                    position: relative;
+                    top: -1rem;                    
+                }
+                
+                .secondary,
+                .primary {
+                    display: flex;
+                    width: 1024px;
+                    font-weight: 600;
+                }
+
+                .primary {
+                    padding: 1rem 0;
+                    order: 3;
+
+                    li {
+                        margin-right: 2rem;
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                        
+                }
+
+                .secondary {
+                    justify-content: space-between;
+                    order: 1;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                    
+                    li {
+                        line-height: 1.5;          
+                        
+                        
+                        
+                    }
+                }
+                
+            }
+		}
+}
+
+.box-bg  {
+    background: rgba($color-cream, .75 );
+	border: $border4;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1024px) {
+        margin-top: 2rem;
+        width: 75%;
+    }
+    @media (min-width: 1500px) {
+        margin-top: 1rem;
+        width: 60%
+    }
+    @media (min-width: 1800px) {
+        margin-top: 4rem;
+        width: 55%;
+    }
+    @media (min-width: 1920px) {
+        width: 45%;
+    }
+}
+
+.legal {
+    background: linear-gradient(#f6e9cb, #fff9f4);
+	padding: 3rem 0;
+    h2 {
+        text-align: center;
+    }
+    ul {
+        list-style: disc;
+        margin-left: 1rem;
+
+        ul {
+            list-style: circle;
+        }
+    }
+}
+
+
+    
