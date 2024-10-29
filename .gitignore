@@ -3,6 +3,7 @@ dist/
 
 # generated types
 .astro/
+.vscode/
 
 # dependencies
 node_modules/
@@ -25,3 +26,5 @@ pnpm-debug.log*
 
 # default astro readme
 README_ASTRO.md
+
+
