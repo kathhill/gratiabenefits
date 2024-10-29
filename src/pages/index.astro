@@ -1,13 +1,384 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import Card from "../components/Card.astro";
+import hightide from "../images/high-tide.mp4";
+import flourish from "../images/flourish.svg";
+import logoIcon from "../images/logo-icon-black-255.png";
+import Contact from "../components/Contact.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout
 	title="Welcome to Gratia Insurance Solutions"
 	description="Some important words"
 >
-	<main></main>
+	<main>
+		<section class="hero" id="intro">
+			<video
+				loop
+				muted
+				playsinline
+				preload="none"
+				autoplay
+				class="video"
+				id="video"
+			>
+				<source src={hightide} type="video/mp4" />
+			</video>
+			<div class="box-bg">
+				<div class="mission" id="intro">
+					<h1>Welcome to Gratia Insurance Solutions</h1>
+					<h2>
+						<span><Image class="left" src={flourish} alt="" /></span>Our Mission<span
+							><Image src={flourish} alt="" /></span
+						>
+					</h2>
+					<p>
+						Serving our clients since 1990, we utilize needs-based planning and
+						strategic marketing to recommend products and services to meet your
+						specific needs. We practice active listening and ask questions so we
+						can tailor a solution specific to your needs, including physician
+						choice, formulary, price, quality of care, personalized service, and
+						copay/coinsurance. We take an educational approach to decoding the
+						complexities of health insurance and other benefits including life,
+						dental, vision, and long term care insurance. The healthcare
+						landscape is always changing, and we want to keep you up to date.
+					</p>
+					<p>
+						Our expertise comes from a collaboration of an in-house and remote
+						team.
+					</p>
+					<p>
+						We care and are grateful for the opportunity to provide information
+						without obligation or fee. If you decide we are a good fit for you,
+						we are compensated directly by the insurance carriers.
+					</p>
+					<p>
+						You are our greatest asset. Thank you for allowing us the
+						opportunity to earn your business.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="services" id="services">
+			<h2>
+				<span><Image class="left" src={flourish} alt="" /></span>Our Services<span
+					><Image src={flourish} alt="" /></span
+				>
+			</h2>
+			<Card
+				id="health"
+				heading="Health Insurance"
+				src="/src/images/health2.jpg"
+				body="Health risks are a part of life, and no one plans on getting sick, but it happens. Good health insurance ensures you get the care you need while protecting you from overwhelming medical bills. Secure your health plan today—contact Gratia Insurance Solutions for a quote."
+				btnCta="#contact"
+				btnText="Learn More"
+			/>
+			<Card
+				id="dental-vision"
+				heading="Dental & Vision Insurance"
+				src="/src/images/dental-vision2.jpg"
+				body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu finibus turpis. In tristique luctus ex, nec bibendum eros dictum sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras semper nisl sed magna aliquet bibendum. Nam aliquet facilisis orci, non commodo sapien semper eget. Vivamus sit amet dignissim nunc. Fusce ultricies non sem vel feugiat."
+				btnCta="https://myplan.ameritas.com/id/010K7056"
+				btnText="Learn More"
+				target="_blank"
+			/>
+			<Card
+				id="medicare"
+				heading="Medicare*"
+				src="/src/images/medicare2.jpg"
+				body="Medicare options can be confusing, with multiple parts, enrollment periods, and rules that can feel overwhelming. As your Medicare Specialist, I'll handle the complexities for you, ensuring you receive quality care and maximize your Medicare benefits and prescription coverage. I'll also help you avoid costly late enrollment penalties, saving you money. Contact me today for a free Medicare consultation."
+				btnCta="#contact"
+				btnText="Learn More"
+				disclaimer="*We do not offer every plan available in your area."
+			/>
+			<Card
+				id="group"
+				heading="Group Benefits"
+				src="/src/images/group2.jpg"
+				body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu finibus turpis. In tristique luctus ex, nec bibendum eros dictum sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras semper nisl sed magna aliquet bibendum. Nam aliquet facilisis orci, non commodo sapien semper eget. Vivamus sit amet dignissim nunc. Fusce ultricies non sem vel feugiat."
+				btnCta="#contact"
+				btnText="Learn More"
+			/>
+			<Card
+				id="life"
+				heading="Life Insurance"
+				src="/src/images/life2.jpg"
+				body="Nothing can replace the loss of a loved one, but planning ahead can ease the burden for those who depend on you. Life insurance can cover mortgage payments, funeral costs, car payments, groceries, and even your child's college tuition. With proper planning, you can provide peace of mind for your loved ones."
+				btnCta="#contact"
+				btnText="Learn More"
+			/>
+			<Card
+				id="long-term"
+				heading="Long Term Care"
+				src="/src/images/long-term-care2.jpg"
+				body="Many people wait too long to secure long-term care insurance, unaware that approval is only possible while they are in good health. It’s crucial to plan early, while you are younger and healthy. Long-term care insurance provides peace of mind, protects the savings you’ve worked hard to build, and prevents your loved ones from bearing the burden of your care. Secure your dignity and choose your care environment with a long-term care policy."
+				btnCta="#contact"
+				btnText="Learn More"
+			/>
+			<div class="container">
+				<p class="disclaimer2">
+					<small
+						>*Currently, we represent 8 organizations which offer 75 products in
+						your area. Please contact Medicare.gov, 1-800-MEDICARE, or your
+						local State Health Insurance Assistance Program (SHIP) to get
+						information on all of your options. This is a proprietary website
+						and is not associated, endorsed or authorized by the Social Security
+						Administration, the Department of Health and Human Services or the
+						Center for Medicare and Medicaid Services. This site contains
+						decision-support content and information about Medicare, services
+						related to Medicare and services for people with Medicare. If you
+						would like to find more information about the Medicare program
+						please visit the Official U.S. Government Site for People with
+						Medicare located at http://www.medicare.gov.</small
+					>
+				</p>
+			</div>
+		</section>
+		<section class="contact" id="contact">
+			<div class="container">
+				<h2>
+					<span><Image class="left" src={flourish} alt="" /></span>Contact Us<span
+						><Image src={flourish} alt="" /></span
+					>
+				</h2>
+				<p>
+					You can contact us conveniently by phone, email, or by filling out the
+					form below. We will respond within 24 hours.
+				</p>
+				<div class="contact-wrapper">
+					<div class="alt-info">
+						<Image src={logoIcon} alt="" />
+						<dl>
+							<dt><Icon name="lucide:phone" /><span>&nbsp;Phone</span></dt>
+							<dd><a href="tel:+18584440903">+1 858-444-0903</a></dd>
+							<dt><Icon name="lucide:mail" /><span>&nbsp;Email</span></dt>
+							<dd>
+								<a href="mailto:customercare@gratiabenefits.com"
+									>customercare@gratiabenefits.com</a
+								>
+							</dd>
+						</dl>
+					</div>
+					<Contact />
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
 
-<style lang="scss"></style>
+<style lang="scss">
+	main {
+		margin: auto;
+		overflow: auto;
+		padding: 0;
+		section {
+			padding: 1rem;
+			@media (min-width: 1024px) {
+				padding: 1.5rem;
+			}
+
+			h2 {
+				white-space: nowrap;
+
+				img {
+					display: inline;
+					padding-left: 1rem;
+					position: relative;
+					max-width: 75px;
+
+					&.left {
+						transform: scaleX(-1);
+					}
+
+					@media (min-width: 450px) {
+						max-width: 85px;
+					}
+
+					@media (min-width: 768px) {
+						max-width: 100px;
+					}
+				}
+			}
+		}
+		.hero {
+			background-image: url(../images/ocean-waves-static.jpg);
+			background-size: cover;
+			margin-bottom: 4rem;
+
+			@media (min-width: 1024px) {
+				background-image: none;
+				margin-bottom: 4rem;
+			}
+
+			@media (min-width: 1111px) {
+				margin-bottom: 6rem;
+			}
+
+			@media (min-width: 1113px) {
+				margin-bottom: 7rem;
+			}
+
+			@media (min-width: 1145px) {
+				margin-bottom: 9rem;
+			}
+
+			@media (min-width: 1231px) {
+				margin-bottom: 10rem;
+			}
+
+			@media (min-width: 1280px) and (max-height: 800px) {
+				margin-bottom: 19rem;
+			}
+
+			@media (min-width: 1418px) {
+				margin-bottom: 12rem;
+			}
+
+			@media (min-width: 1800px) {
+				margin-bottom: 9rem;
+			}
+
+			@media (min-width: 1914px) {
+				margin-bottom: 10rem;
+			}
+
+			@media (min-width: 1920px) {
+				margin-bottom: 7rem;
+			}
+
+			@media (min-width: 2016px) {
+				margin-bottom: 8rem;
+			}
+
+			@media (min-width: 2327px) {
+				margin-bottom: 16rem;
+			}
+
+			.video {
+				display: none;
+				@media (min-width: 1024px) {
+					display: block;
+					object-fit: cover;
+					width: 100vw;
+					height: 100vh;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: -1;
+				}
+
+				@media (min-width: 1280px) and (max-height: 800px) {
+					height: 175vh;
+				}
+			}
+
+			.mission {
+				padding: 2rem;
+				text-align: center;
+			}
+		}
+
+		.services {
+			padding-left: 0;
+			padding-right: 0;
+			background: linear-gradient(to right, #b29478, #f6e8cb);
+
+			.disclaimer2 {
+				padding: 2rem 1rem;
+				margin-bottom: 0;
+			}
+		}
+
+		.contact {
+			background: linear-gradient(#f6e9cb, #fff9f4);
+
+			.container {
+				margin: 2rem auto;
+
+				h2 {
+					margin-bottom: 0;
+				}
+
+				p {
+					@media (min-width: 1024px) {
+						text-align: center;
+					}
+				}
+
+				.contact-wrapper {
+					display: flex;
+					flex-direction: column;
+
+					@media (min-width: 1024px) {
+						flex-direction: row;
+					}
+
+					.alt-info {
+						display: flex;
+
+						dd {
+							text-align: left;
+							&:first-of-type {
+								border-bottom: 2px solid #6e4f33;
+								padding-bottom: 1rem;
+							}
+						}
+
+						dt {
+							padding-top: 1rem;
+							display: flex;
+
+							span {
+								display: none;
+
+								@media (min-width: 768px) {
+									display: block;
+								}
+							}
+						}
+
+						img {
+							display: none;
+
+							@media (min-width: 768px) {
+								display: block;
+								width: 25%;
+								margin-right: 2rem;
+							}
+
+							@media (min-width: 1024px) {
+								width: 75%;
+							}
+						}
+					}
+					@media (min-width: 1024px) {
+						display: flex;
+
+						.alt-info {
+							margin-right: 2rem;
+							text-align: center;
+							flex-direction: column;
+							align-items: center;
+
+							dt {
+								padding-top: 2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+</style>
+
+<script>
+	const video = document.getElementById("video");
+
+	document.addEventListener("DOMContentLoaded", function addAutoplay() {
+		if (window.innerWidth < 1024) {
+			video?.removeAttribute("autoplay");
+		}
+	});
+</script>
