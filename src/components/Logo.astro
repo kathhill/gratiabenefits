@@ -1,0 +1,17 @@
+---
+interface Props {
+	width: string;
+	height: string;
+	class?: string;
+}
+
+const { width, height, class: className } = Astro.props;
+---
+
+<img
+	width={width}
+	height={height}
+	class={className}
+	src="/src/images/logo-final.svg"
+	alt="Gratia Insurance Solutions"
+/>

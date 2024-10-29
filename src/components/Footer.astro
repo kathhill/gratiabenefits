@@ -1,0 +1,99 @@
+---
+import Logo from "./Logo.astro";
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<div class="container">
+		<a class="logo" href="/"><Logo width="140" height="64" /></a>
+
+		<ul class="legal-links">
+			<li><a href="/privacy">Privacy Policy</a></li>
+			<li><a href="/terms">Terms &amp; Conditions</a></li>
+			<li><a href="">Do Not Sell My Information</a></li>
+		</ul>
+
+		<p>
+			&copy;<span id="footer-year">{year}</span>&nbsp;Gratia Insurance
+			Solutions, Inc. All rights reserved.
+		</p>
+		<p class="license">CA License 0807971<br />Debi L. Clark</p>
+
+		<div class="social-wrapper">
+			<p>Connect with us:</p>
+			<ul>
+				<li><a href=""><Icon name="lucide:facebook" /></a></li>
+				<li><a href=""><Icon name="lucide:linkedin" /></a></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<style lang="scss">
+	footer {
+		border-bottom: 4px solid #6e4f33;
+		background: linear-gradient(#f6e9cb, #fff9f4);
+
+		.container {
+			padding: 1rem;
+
+			.logo {
+				margin-bottom: 1rem;
+
+				@media (min-width: 768px) {
+					margin-bottom: 2rem;
+				}
+			}
+
+			.legal-links {
+				@media (min-width: 768px) {
+					display: flex;
+
+					li {
+						margin-right: 2rem;
+					}
+				}
+			}
+
+			.license {
+				margin-bottom: 1rem;
+
+				@media (min-width: 768px) {
+					text-align: center;
+				}
+			}
+
+			.social-wrapper {
+				border-top: 1px solid #6e4f33;
+				// hide the social until facebook and linkedin created
+				//display: flex;
+				display: none;
+				padding-top: 1rem;
+
+				p {
+					margin-right: 1rem;
+				}
+
+				ul {
+					display: flex;
+
+					li {
+						margin-right: 1rem;
+					}
+				}
+			}
+
+			@media (min-width: 768px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+</style>
+
+<script is:inline data-astro-rerun>
+	document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>

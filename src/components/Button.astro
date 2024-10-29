@@ -1,0 +1,22 @@
+---
+interface Props {
+	btnCta?: string;
+	btnText?: string;
+}
+
+const { btnCta, btnText } = Astro.props;
+---
+
+<>
+	{
+		btnCta ? (
+			<a class="btn" href={btnCta}>
+				{btnText}
+			</a>
+		) : (
+			<button name="submit" class="btn" id="submit" type="submit" value="Send">
+				<slot name="button-slot" />
+			</button>
+		)
+	}
+</>

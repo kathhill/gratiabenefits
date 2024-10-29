@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import logo from "../images/logo.png";
+import { Icon } from "astro-icon/components";
+import Logo from "../components/Logo.astro";
+---
+
+<div class="menu-wrapper" id="menu">
+	<ul class="primary">
+		<li><a href="#health">Health Insurance</a></li>
+		<li><a href="#dental-vision">Dental &amp; Vision</a></li>
+		<li><a href="#medicare">Medicare</a></li>
+		<li><a href="#group">Group Benefits</a></li>
+		<li><a href="#life">Life Insurance</a></li>
+		<li><a href="#long-term">Long Term Care</a></li>
+		<li><a href="#contact">Contact Us</a></li>
+	</ul>
+
+	<Logo class="large-screen" width="250" height="110" />
+
+	<ul class="secondary">
+		<li>CA License 0807971<br />Debi L. Clark</li>
+		<li>
+			<a class="icon" href="tel:+18584440903">
+				Call today:<br />
+				<span class="desktop">858-444-0903</span>
+			</a>
+		</li>
+	</ul>
+</div>

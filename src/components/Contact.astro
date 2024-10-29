@@ -1,0 +1,423 @@
+---
+import Button from "./Button.astro";
+---
+
+<form action="" method="post" id="contact">
+	<div class="form-group">
+		<label for="name">Name:</label>
+		<input name="name" id="name" type="text" required autocomplete="on" />
+	</div>
+
+	<div class="form-group">
+		<label for="ainm" class="sr-only">Real users skip this field.</label>
+		<input name="ainm" id="ainm" class="sr-only" type="text" tabindex="-1" />
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input name="email" id="email" type="email" required autocomplete="on" />
+	</div>
+
+	<div class="form-group">
+		<label for="address1">Street Address:</label>
+		<input
+			name="address1"
+			id="address1"
+			type="text"
+			required
+			autocomplete="on"
+		/>
+	</div>
+
+	<div class="form-group">
+		<label for="address2">Street Address 2:</label>
+		<input name="address2" id="address2" type="text" autocomplete="on" />
+	</div>
+
+	<div class="form-group csz">
+		<div class="csz city">
+			<label for="city">City:</label>
+			<input name="city" id="city" type="text" required autocomplete="on" />
+		</div>
+
+		<div class="csz state">
+			<label for="state">State:</label>
+			<input
+				name="state"
+				id="state"
+				type="text"
+				size="2"
+				required
+				autocomplete="on"
+			/>
+		</div>
+
+		<div class="csz zip">
+			<label for="zip">ZIP Code:</label>
+			<input
+				name="zip"
+				id="zip"
+				type="text"
+				size="5"
+				pattern="[0-9]{5}"
+				required
+				autocomplete="on"
+			/>
+		</div>
+	</div>
+
+	<fieldset class="service-choices form-group">
+		<legend>Which services are you interested in? (check all that apply)</legend
+		>
+		<div>
+			<input class="accent" type="checkbox" id="health" name="health" />
+			<label for="health">Health Insurance</label>
+		</div>
+		<div>
+			<input
+				class="accent"
+				type="checkbox"
+				id="dental-vision"
+				name="dental-vision"
+			/>
+			<label for="dental-vision">Dental &amp; Vision Insurance</label>
+		</div>
+		<div>
+			<input class="accent" type="checkbox" id="medicare" name="medicare" />
+			<label for="medicare">Medicare</label>
+		</div>
+		<div>
+			<input class="accent" type="checkbox" id="group" name="group" />
+			<label for="group">Group Benefits</label>
+		</div>
+		<div>
+			<input class="accent" type="checkbox" id="life" name="life" />
+			<label for="life">Life Insurance</label>
+		</div>
+		<div>
+			<input
+				class="accent"
+				type="checkbox"
+				id="long-term-care"
+				name="long-term-care"
+			/>
+			<label for="long-term-care">Long Term Care</label>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<label for="more-info"
+			>Please provide any additional information you think might be helpful.</label
+		>
+		<textarea name="more-info" id="more-info" rows="5" cols="10"></textarea>
+	</div>
+
+	<Button>
+		<span slot="button-slot">
+			<svg
+				id="form-loading"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="icon icon-tabler icons-tabler-outline icon-tabler-loader-2 hidden size-5 animate-spin"
+			>
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M12 3a9 9 0 1 0 9 9"></path>
+			</svg>
+			Submit
+		</span>
+	</Button>
+
+	<!-- message send success feedback -->
+	<dialog id="form-good-feedback" class="success">
+		<div>
+			<p>
+				Message sent successfully. You should receive a reply within 24 hours.
+			</p>
+		</div>
+	</dialog>
+
+	<!-- message send fail feedback -->
+	<dialog id="form-bad-feedback" class="error">
+		<div>
+			<p>
+				Something went wrong. Please try again or
+				<a
+					href="mailto:dr.harmeling@fenixtherapeuticservices.com?subject=Would like to book a session."
+					>contact Fenix Therapeutic Services by email</a
+				>.
+			</p>
+		</div>
+	</dialog>
+
+	<style lang="scss">
+		form {
+			color: #000;
+			background: transparent;
+			box-sizing: border-box;
+			width: 100%;
+
+			@media (min-width: 1024px) {
+				border: 2px solid #6e4f33;
+				border-radius: 6px;
+				padding: 2rem;
+			}
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+
+				&.csz {
+					flex-direction: row;
+					flex-wrap: wrap;
+
+					.csz {
+						display: flex;
+						flex-direction: column;
+
+						&.city {
+							flex: 6;
+
+							input {
+								margin-right: 1rem;
+								@media (min-width: 768px) {
+									margin-right: 2rem;
+								}
+							}
+						}
+
+						&.state {
+							flex: 1;
+
+							input {
+								@media (min-width: 768px) {
+									margin-right: 2rem;
+								}
+							}
+						}
+
+						&.zip {
+							flex: 2;
+						}
+					}
+				}
+			}
+
+			label {
+				color: #000;
+				display: block;
+				padding: 1rem 0;
+			}
+			input,
+			textarea {
+				background: transparent;
+				border: 1px solid #6e4f33;
+				border-radius: 6px;
+				box-sizing: border-box;
+				//box-shadow: 0 0 10px #444;
+				color: #000;
+				font-size: 1.2rem;
+				&:focus {
+					color: #000;
+				}
+				&[type="text"],
+				&[type="email"] {
+					height: 3rem;
+				}
+			}
+
+			.service-choices {
+				margin: 3rem 0 1rem;
+
+				padding: 0 2rem 2rem;
+
+				@media (min-width: 768px) {
+					display: grid;
+					grid-template-columns: auto auto;
+					width: 80%;
+				}
+
+				@media (min-width: 1024px) {
+					width: 100%;
+				}
+
+				legend {
+					padding-left: 0.5rem;
+					padding-right: 0.5rem;
+				}
+
+				div {
+					display: flex;
+					margin-bottom: -2rem;
+
+					.accent {
+						accent-color: #6e4f33;
+					}
+
+					[color-scheme="dark"] .accent {
+						accent-color: hsl(28, 36%, 32%);
+					}
+
+					input[type="checkbox"] {
+						cursor: pointer;
+						margin-right: 0.5rem;
+					}
+				}
+			}
+
+			textarea {
+				margin-bottom: 1rem;
+			}
+
+			.sr-only {
+				width: 1rem;
+			}
+			button {
+				background: #fff;
+				color: #333;
+				cursor: pointer;
+				display: flex;
+				font-size: 1.5rem;
+				gap: 0.5rem;
+				justify-content: center;
+				align-items: center;
+				margin: 2rem auto;
+				padding: 0.5rem;
+				@media (min-width: 768px) {
+					width: 9rem;
+				}
+			}
+		}
+		dialog {
+			&.success,
+			&.error {
+				border-radius: 0.5rem;
+				bottom: 25%;
+				display: flex;
+				font-weight: 500;
+				margin-left: auto;
+				margin-right: auto;
+				opacity: 0;
+				position: fixed;
+				padding: 0;
+				transition-duration: 0.5s;
+				visibility: hidden;
+				z-index: 10;
+				width: 500px;
+				height: 250px;
+				> div {
+					text-align: center;
+					padding: 1rem;
+				}
+			}
+			&.success {
+				background-color: rgb(255 255 255);
+				color: rgb(22 101 52);
+				a {
+					color: rgb(22 101 52);
+				}
+			}
+			&.error {
+				background-color: rgb(255 255 255);
+				color: rgb(153 27 27);
+				a {
+					color: rgb(153 27 27);
+				}
+			}
+		}
+		.animate-spin {
+			animation: spin 1s linear infinite;
+		}
+		.size-5 {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+		@keyframes spin {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+
+	<script>
+		// handle the form submission
+		let xhr = new XMLHttpRequest();
+
+		// only one contact form supported per page
+		const form = document.getElementById("contact-form") as HTMLFormElement;
+		const formLoadingIndicator = document.getElementById("form-loading");
+		const formGoodFeedback = document.getElementById("form-good-feedback");
+		const formBadFeedback = document.getElementById("form-bad-feedback");
+
+		const handleFormSubmission = (event: Event) => {
+			// prevent page from reloading
+			event.preventDefault();
+
+			// show loading indicator
+			formLoadingIndicator?.classList.remove("hidden");
+
+			// get form data
+			const formData = new FormData(form);
+
+			// create POST request to the form action attribute
+			xhr.open("POST", form.action, true);
+
+			// make sure we receive json back
+			xhr.setRequestHeader("Accept", "application/json");
+
+			// SEND IT!
+			xhr.send(formData);
+
+			// once we get a response...
+			xhr.onload = function () {
+				formLoadingIndicator?.classList.add("hidden");
+				const response = JSON.parse(xhr.response);
+
+				if (xhr.status === 200) {
+					// The request was successful
+					console.log("Form submitted successfully.");
+					// reset form on successful email send
+					form?.reset();
+					if (formGoodFeedback) {
+						formGoodFeedback.style.visibility = "visible";
+						formGoodFeedback.style.opacity = "1";
+
+						// reset form feedback after a few seconds
+						setTimeout(() => {
+							formGoodFeedback.style.opacity = "0";
+
+							setTimeout(() => {
+								formGoodFeedback.style.visibility = "hidden";
+							}, 300);
+						}, 5000);
+					}
+				} else {
+					const message =
+						"Form submission failed with error: " + response.error;
+					console.log(message);
+					// The request failed
+					if (formBadFeedback) {
+						formBadFeedback.style.visibility = "visible";
+						formBadFeedback.style.opacity = "1";
+
+						// reset form feedback after a few seconds
+						setTimeout(() => {
+							formBadFeedback.style.opacity = "0";
+
+							setTimeout(() => {
+								formBadFeedback.style.visibility = "hidden";
+							}, 300);
+						}, 7000);
+					}
+				}
+			};
+		};
+		form?.addEventListener("submit", handleFormSubmission, true);
+	</script>
+</form>
