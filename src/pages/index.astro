@@ -21,17 +21,6 @@ import longTermCare from "../images/long-term-care2.jpg";
 >
 	<main>
 		<section class="hero" id="intro">
-			<video
-				loop
-				muted
-				playsinline
-				preload="none"
-				autoplay
-				class="video"
-				id="video"
-			>
-				<source src={hightide} type="video/mp4" />
-			</video>
 			<div class="box-bg">
 				<div class="mission" id="intro">
 					<h1>Welcome to Gratia Insurance Solutions</h1>
@@ -211,76 +200,13 @@ import longTermCare from "../images/long-term-care2.jpg";
 			}
 		}
 		.hero {
-			background-image: url(../images/ocean-waves-static.jpg);
+			//background-image: url(../images/ocean-waves-static.jpg);
+			background-image: url(../images/high-tide-lg.jpg);
 			background-size: cover;
-			margin-bottom: 4rem;
-
-			@media (min-width: 1024px) {
-				background-image: none;
-				margin-bottom: 4rem;
-			}
-
-			@media (min-width: 1111px) {
-				margin-bottom: 6rem;
-			}
-
-			@media (min-width: 1113px) {
-				margin-bottom: 7rem;
-			}
-
-			@media (min-width: 1145px) {
-				margin-bottom: 9rem;
-			}
-
-			@media (min-width: 1231px) {
-				margin-bottom: 10rem;
-			}
-
-			@media (min-width: 1280px) and (max-height: 800px) {
-				margin-bottom: 19rem;
-			}
-
-			@media (min-width: 1418px) {
-				margin-bottom: 12rem;
-			}
-
-			@media (min-width: 1800px) {
-				margin-bottom: 9rem;
-			}
-
-			@media (min-width: 1914px) {
-				margin-bottom: 10rem;
-			}
-
-			@media (min-width: 1920px) {
-				margin-bottom: 7rem;
-			}
-
-			@media (min-width: 2016px) {
-				margin-bottom: 8rem;
-			}
-
-			@media (min-width: 2327px) {
-				margin-bottom: 16rem;
-			}
-
-			.video {
-				display: none;
-				@media (min-width: 1024px) {
-					display: block;
-					object-fit: cover;
-					width: 100vw;
-					height: 100vh;
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: -1;
-				}
-
-				@media (min-width: 1280px) and (max-height: 800px) {
-					height: 175vh;
-				}
-			}
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			.mission {
 				padding: 2rem;
@@ -381,13 +307,3 @@ import longTermCare from "../images/long-term-care2.jpg";
 		}
 	}
 </style>
-
-<script>
-	const video = document.getElementById("video");
-
-	document.addEventListener("DOMContentLoaded", function addAutoplay() {
-		if (window.innerWidth < 1024) {
-			video?.removeAttribute("autoplay");
-		}
-	});
-</script>

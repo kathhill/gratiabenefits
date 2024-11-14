@@ -400,15 +400,12 @@ span {
     margin-left: auto;
     margin-right: auto;
     @media (min-width: 1024px) {
-        margin-top: 2rem;
         width: 75%;
     }
     @media (min-width: 1500px) {
-        margin-top: 1rem;
         width: 60%
     }
     @media (min-width: 1800px) {
-        margin-top: 4rem;
         width: 55%;
     }
     @media (min-width: 1920px) {
