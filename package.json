@@ -14,7 +14,7 @@
     "@fontsource-variable/playfair-display": "^5.1.0",
     "@fontsource-variable/urbanist": "^5.1.0",
     "@iconify-json/lucide": "^1.2.10",
-    "astro": "^4.16.5",
+    "astro": "^4.16.12",
     "astro-icon": "^1.1.1",
     "sass": "^1.79.5",
     "typescript": "^5.6.3"
