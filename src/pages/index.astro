@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Card from "../components/Card.astro";
-import hightide from "../images/high-tide.mp4";
+import { Modal } from "accessible-astro-components";
 import flourish from "../images/flourish.svg";
 import logoIcon from "../images/logo-icon-higher-res.svg";
 import Contact from "../components/Contact.astro";
@@ -13,6 +13,7 @@ import medicare from "../images/medicare2.jpg";
 import group from "../images/group2.jpg";
 import life from "../images/life2.jpg";
 import longTermCare from "../images/long-term-care2.jpg";
+import medicareFourParts from "../images/medicare-four-parts.svg";
 ---
 
 <Layout
@@ -84,8 +85,12 @@ import longTermCare from "../images/long-term-care2.jpg";
 				heading="Medicare*"
 				src={medicare.src}
 				body="Medicare options can be confusing, with multiple parts, enrollment periods, and rules that can feel overwhelming. As your Medicare Specialist, I'll handle the complexities for you, ensuring you receive quality care and maximize your Medicare benefits and prescription coverage. I'll also help you avoid costly late enrollment penalties, saving you money. Contact me today for a free Medicare consultation. Annual Open Enrollment Period (AEP) October 15 - December 7 each year."
+				hasDialog
+				modalId="medicare-parts"
+				modalLinkText="What are the four parts of Medicare?"
 				btnCta="#contact"
 				btnText="Learn More"
+				hasDisclaimer
 				disclaimer="*We do not offer every plan available in your area."
 			/>
 			<Card
@@ -112,6 +117,15 @@ import longTermCare from "../images/long-term-care2.jpg";
 				btnCta="#contact"
 				btnText="Learn More"
 			/>
+
+			<Modal triggerId="medicare-parts" title="The Four Parts of Medicare">
+				<p>
+					<Image
+						src={medicareFourParts}
+						alt="Part A and B, original Medicare; Part C, private medical plans that typically include Part A, Part B, and often Part D; Part D, Medicare prescription drug coverage plans."
+					/>
+				</p>
+			</Modal>
 		</section>
 		<section>
 			<div class="container">

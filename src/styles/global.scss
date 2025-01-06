@@ -92,6 +92,10 @@ p {
 a {
     position: relative;
     text-decoration: none;
+    
+    &[role=button] {
+        cursor: pointer;
+    }
 }
 
 a:not(.logo, .icon, .btn)::before {
@@ -135,6 +139,10 @@ dt {
 
 dd {
     font-size: 1.2rem;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container {
@@ -194,6 +202,15 @@ span {
 
 .hidden {
     display: none;
+}
+
+.modal {
+    width: 860px !important;
+
+    h3 {
+        color: #5c3a1b;
+        font-size: 1.75rem;
+    }
 }
 
 @media (max-width: 1023.9px) {

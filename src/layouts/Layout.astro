@@ -54,6 +54,11 @@ const { description } = Astro.props;
 		<Footer />
 	</body>
 </html>
+<style type="scss" is:global>
+	:root {
+		--color-cream: #f6e8cb;
+	}
+</style>
 <script>
 	const menu = document.getElementById("menu") as HTMLElement;
 	const menuToggle = document.getElementById("menu-toggle") as HTMLFormElement;

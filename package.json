@@ -18,5 +18,8 @@
     "astro-icon": "^1.1.1",
     "sass": "^1.79.5",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "accessible-astro-components": "^3.0.1"
   }
 }

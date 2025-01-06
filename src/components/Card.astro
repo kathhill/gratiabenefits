@@ -6,12 +6,28 @@ interface Props {
 	btnCta: string;
 	btnText: string;
 	src: string;
+	hasDisclaimer?: boolean;
 	disclaimer?: string;
 	target?: string;
+	hasDialog?: boolean;
+	modalId?: string;
+	modalLinkText?: string;
 }
 
-const { id, heading, body, btnCta, btnText, src, disclaimer, target } =
-	Astro.props;
+const {
+	id,
+	heading,
+	body,
+	btnCta,
+	btnText,
+	src,
+	hasDisclaimer,
+	disclaimer,
+	target,
+	hasDialog,
+	modalId,
+	modalLinkText,
+} = Astro.props;
 ---
 
 <article id={id}>
@@ -20,8 +36,27 @@ const { id, heading, body, btnCta, btnText, src, disclaimer, target } =
 		<div>
 			<h3>{heading}</h3>
 			<p>{body}</p>
+			{
+				hasDialog ? (
+					<p class="modal-link">
+						<a role="button" id={modalId}>
+							{modalLinkText}
+						</a>
+					</p>
+				) : (
+					""
+				)
+			}
 			<a href={btnCta} class="btn" target={target}>{btnText}</a>
-			<p class="disclaimer"><small>{disclaimer}</small></p>
+			{
+				hasDisclaimer ? (
+					<p class="disclaimer">
+						<small>{disclaimer}</small>
+					</p>
+				) : (
+					""
+				)
+			}
 		</div>
 	</div>
 </article>
@@ -42,6 +77,10 @@ const { id, heading, body, btnCta, btnText, src, disclaimer, target } =
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+
+				.modal-link {
+					font-weight: 600;
+				}
 			}
 
 			img {
