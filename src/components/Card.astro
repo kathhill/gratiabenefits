@@ -39,9 +39,7 @@ const {
 			{
 				hasDialog ? (
 					<p class="modal-link">
-						<a role="button" id={modalId}>
-							{modalLinkText}
-						</a>
+						<button id={modalId}>{modalLinkText}</button>
 					</p>
 				) : (
 					""
@@ -79,7 +77,13 @@ const {
 				justify-content: center;
 
 				.modal-link {
-					font-weight: 600;
+					button {
+						background: none;
+						border: none;
+						font-size: 1rem;
+						font-weight: 600;
+						text-align: left;
+					}
 				}
 			}
 
