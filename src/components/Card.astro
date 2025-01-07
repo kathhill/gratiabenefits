@@ -5,6 +5,7 @@ interface Props {
 	body: string;
 	btnCta: string;
 	btnText: string;
+	btnIsWide?: boolean;
 	src: string;
 	hasDisclaimer?: boolean;
 	disclaimer?: string;
@@ -20,6 +21,7 @@ const {
 	body,
 	btnCta,
 	btnText,
+	btnIsWide,
 	src,
 	hasDisclaimer,
 	disclaimer,
@@ -45,7 +47,9 @@ const {
 					""
 				)
 			}
-			<a href={btnCta} class="btn" target={target}>{btnText}</a>
+			<a href={btnCta} class:list={["btn", { btnIsWide }]} target={target}
+				>{btnText}</a
+			>
 			{
 				hasDisclaimer ? (
 					<p class="disclaimer">
